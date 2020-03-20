@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    <h1>Home page!</h1>
+    <h3>Get your titanic prediction here!</h3>
+    <p>Enter the details of the made up person on titanic voyage</p>
+    <p>We will give a prediction</p>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+      <b>Pclass:</b><input type="text" name = "pclass">
+      <b>age:</b><input type="text" name = "age">
+      <b>sex:</b><input type="text" name = "sex">
+      <b>parch:</b><input type="text" name = "parch">
+      <b>fare:</b><input type="text" name = "fare">
+      <b>embarked:</b><input type="text" name = "embarked">
+      <b>sibsp:</b><input type="text" name = "sibsp">
+      <b>title:</b><input type="text" name = "title">
+      <input type="submit">
+    </form>
+    <script src="{% static 'main.js' %}"></script>
+  </body>
+</html>
